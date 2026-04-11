@@ -79,31 +79,6 @@ Valencia Bangswp - V2/
 
 **版权所有 © 2025 DornGames**
 
-## 部署
-
-本项目支持通过GitHub Actions自动部署到InfinityFree：
-
-```yaml
-name: Deploy to InfinityFree via FTP
-on:
-  push:
-    branches:
-      - main
-jobs:
-  ftp-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_TARGET_FOLDER }}
-```
-
 ## 许可证
 
 本项目为私有项目，版权所有。
